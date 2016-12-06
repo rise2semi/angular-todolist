@@ -1,0 +1,18 @@
+{
+  "name": "angular-todolist",
+  "version": "0.0.1",
+  "description": "Project for learning Angular",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rise2semi/angular-todolist.git"
+  },
+  "author": "Borys Semerenko <rise2semi@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/rise2semi/angular-todolist/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}
