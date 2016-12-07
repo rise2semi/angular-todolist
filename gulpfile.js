@@ -1,12 +1,23 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
+var concat = require('gulp-concat');
 
 /**
  * Specify config for tasks
  */
 var config = {
     index: 'src/index.html',
-    dist: 'dist'
+    dist: 'dist',
+    distJs: 'dist/js',
+    jsFiles:  [
+        'node_modules/angular/angular.min.js',
+
+        //modules
+        'src/js/app.js',
+
+        //controllers
+        'src/js/controllers/mainController.js'
+    ]
 };
 
 /**
@@ -35,6 +46,15 @@ gulp.task('server', ['copy'], function () {
 });
 
 /**
+ * build js files into one bundle
+ */
+gulp.task('scripts', function() {
+  return gulp.src(config.jsFiles)
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest(config.distJs));
+});
+
+/**
  * Default gulp task
  */
-gulp.task('default', ['server']);
+gulp.task('default', ['server', 'scripts']);
