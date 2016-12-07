@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
 
-
 /**
  * Specify config for tasks
  */
@@ -12,8 +11,10 @@ var config = {
     distJs: 'dist/js',
     jsFiles:  [
         'node_modules/angular/angular.min.js',
+
         //modules
         'src/js/app.js',
+
         //controllers
         'src/js/controllers/mainController.js'
     ]
