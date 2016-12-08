@@ -5,11 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Angular TODO-list</title>
   <meta name="description" content="">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-controller="MainController as main">
 
-    <h1>{{ main.title }}</h1>
+    <section class="todoapp">
+    	<section class="main">
+    			<ul class="todo-list">
+    				<li ng-repeat="todo in main.todos">
+    					<div class="view">
+    						<label>{{todo.title}}</label>
+    					</div>
+    				</li>
+    			</ul>
+    		</section>
+    </section>
 
     <!-- scripts bundle  -->
     <script src="js/scripts.js"></script>
