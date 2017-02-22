@@ -9,6 +9,10 @@ var config = {
     index: 'src/index.html',
     dist: 'dist',
     distJs: 'dist/js',
+    css: [
+        'node_modules/todomvc-app-css/index.css',
+        'node_modules/todomvc-common/base.css'
+    ],
     jsFiles:  [
         'node_modules/angular/angular.min.js',
 
@@ -27,11 +31,18 @@ gulp.task('copy', function () {
     gulp.src( config.index )
         .pipe( gulp.dest( config.dist ) );
 });
+/**
+ * Copy css file
+ */
+gulp.task('copyCss', function () {
+    gulp.src( config.css )
+        .pipe( gulp.dest( config.dist ) );
+});
 
 /**
  * Start local server for development
  */
-gulp.task('server', ['copy'], function () {
+gulp.task('server', ['copy', 'copyCss'], function () {
 
     /**
      * Listening port can be specified manually via command `PORT=7777 gulp`
